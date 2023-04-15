@@ -92,9 +92,9 @@ public class Sorting {
         int n = arr.length;
 
         // Build heap (rearrange array)
-        for (int i = n / 2 - 1; i >= 0; i--)
+        for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
-
+        }
         // One by one extract an element from heap
         for (int i = n - 1; i >= 0; i--) {
             // Move current root to end
@@ -104,8 +104,8 @@ public class Sorting {
 
             // call max heapify on the reduced heap
             heapify(arr, i, 0);
-        }
-    }
+        } // for
+    } // heapSort
 
     public void heapify(int arr[], int n, int i)
     {
@@ -116,11 +116,11 @@ public class Sorting {
         // If left child is larger than root
         if (l < n && arr[l] > arr[largest]) {
             largest = l;
-        }
+        } // if
         // If right child is larger than largest so far
         if (r < n && arr[r] > arr[largest]) {
             largest = r;
-        }
+        } // if
 
         numComp++;
 
@@ -132,8 +132,10 @@ public class Sorting {
 
             // Recursively heapify the affected sub-tree
             heapify(arr, n, largest);
-        }
-    }
+        } // if
+    } // heapify
+
+
 
     public void printArr(int[] arr, int count) {
         for (int i  = 0; i < count; i++) {
