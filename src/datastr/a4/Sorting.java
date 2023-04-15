@@ -39,7 +39,6 @@ public class Sorting {
 
 
     public void mergeSort(int[] inputs, int length) {
-        numComp = 0;
         if (length < 2) {
             return;
         } // if
@@ -80,10 +79,12 @@ public class Sorting {
 
         while (i < left) {
             inputs[k++] = l[i++];
+//            numComp++;
         } // while
 
         while (j < right) {
             inputs[k++] = r[j++];
+//            numComp++;
         } // while
     } // merge
 
@@ -101,6 +102,9 @@ public class Sorting {
         return numComp;
     } // getNumComp
 
+    public void resetNumComp() {
+        numComp = 0;
+    } // getNumComp
 
 
 } // Sorting Class

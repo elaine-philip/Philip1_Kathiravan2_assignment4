@@ -36,10 +36,12 @@ public class SortedDriver {
             // user input
 
             if (command.equals("s")) {
+                list.resetNumComp();
                 list.SelectionSort(inputs, count);
                 list.printArr(inputs, count);
                 System.out.println("#Selection-sort comparisons: " + list.getNumComp());
             } else if (command.equals("m")) {
+                list.resetNumComp();
                 list.mergeSort(inputs,  count);
                 list.printArr(inputs, count);
                 System.out.println("#Merge-sort comparisons: " + list.getNumComp());
