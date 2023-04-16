@@ -45,6 +45,18 @@ public class SortedDriver {
                 list.mergeSort(inputs,  count);
                 list.printArr(inputs, count);
                 System.out.println("#Merge-sort comparisons: " + list.getNumComp());
+            } else if (command.equals("h")) {
+                list.heapSort(inputs,  count);
+                list.printArr(inputs, count);
+                System.out.println("#Heap-sort comparisons: " + list.getNumComp());
+            } else if (command.equals("q")) {
+                list.quickSortImp(inputs, 0, count -1);
+                list.printArr(inputs, count);
+                System.out.println("#Quick-sort-fp comparisons: " + list.getNumComp());
+            } else if (command.equals("r")) {
+                list.sort(inputs, 0, count - 1);
+                list.printArr(inputs, count);
+                System.out.println("#Quick-sort-rp comparisons: " + list.getNumComp());
             } // if
 
 
