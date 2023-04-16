@@ -53,6 +53,54 @@ public class Driver {
                  System.out.println();
                  average = sum / 10;
                  System.out.println("#Merge-sort comparisons: " + average);
+             } else if (command.equals("h")) { //HEAPSORT
+                 counter = 0;
+                 while (counter < 10) {
+                     for (int i = 0; i < count; i++) {
+                         int randomNum = (int)(Math.random() * 101);
+                         inputs[i]  = randomNum;
+                     } // for
+
+                     list.resetNumComp();
+                     list.heapSort(inputs, count);
+                     sum = sum + list.getNumComp();
+                     counter ++;
+                 } // while
+                 System.out.println();
+                 average = sum / 10;
+                 System.out.println("#Heap-sort comparisons: " + average);
+                 } else if (command.equals("q")) { //QUICKSORT-FP
+                 counter = 0;
+                 while (counter < 10) {
+                     for (int i = 0; i < count; i++) {
+                         int randomNum = (int)(Math.random() * 101);
+                         inputs[i]  = randomNum;
+                     } // for
+
+                     list.resetNumComp();
+                     list.quickSortImp(inputs, 0, count - 1);
+                     sum = sum + list.getNumComp();
+                     counter ++;
+                 } // while
+                 System.out.println();
+                 average = sum / 10;
+                 System.out.println("#Quick-sort-fp comparisons: " + average);
+                 } else if (command.equals("r")) { //QUICKSORT-RP
+                 counter = 0;
+                 while (counter < 10) {
+                     for (int i = 0; i < count; i++) {
+                         int randomNum = (int)(Math.random() * 101);
+                         inputs[i]  = randomNum;
+                     } // for
+
+                     list.resetNumComp();
+                     list.sort(inputs, 0, count - 1);
+                     sum = sum + list.getNumComp();
+                     counter ++;
+                 } // while
+                 System.out.println();
+                 average = sum / 10;
+                 System.out.println("#Quick-sort-rp comparisons: " + average);
                  } // if
 
              System.exit(0);
