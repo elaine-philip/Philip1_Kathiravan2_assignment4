@@ -3,6 +3,7 @@ package datastr.a4;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.util.*;
 
 public class SortedDriver {
     public static void main(String[] args) {
@@ -19,6 +20,7 @@ public class SortedDriver {
 
             int count = 0;
             int[] inputs = new int[10000];
+//            int length = inputs.length();
 
             while(scan.hasNextInt()) {
                 int itemInt = scan.nextInt();
@@ -26,6 +28,10 @@ public class SortedDriver {
                 count++;
             } // while
             // creates input int array
+
+//            int low = inputs[0];
+//            int high = inputs[9999];
+
 
             String command = "";
             System.out.print("Enter the algorithm: ");
@@ -47,7 +53,16 @@ public class SortedDriver {
                 list.heapSort(inputs,  count);
                 list.printArr(inputs, count);
                 System.out.println("#Heap-sort comparisons: " + list.getNumComp());
+            } else if (command.equals("q")) {
+                list.quickSortImp(inputs, 0, count -1);
+                list.printArr(inputs, count);
+                System.out.println("#Quick-sort-fp comparisons: " + list.getNumComp());
+            } else if (command.equals("r")) {
+                list.sort(inputs, 0, count - 1);
+                list.printArr(inputs, count);
+                System.out.println("#Quick-sort-rp comparisons: " + list.getNumComp());
             } // if
+
 
 
             System.exit(0);
